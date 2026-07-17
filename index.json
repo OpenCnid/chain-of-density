@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "updated": "2026-07-17",
+  "notes": [
+    {
+      "id": "2023-chain-of-density",
+      "path": "notes/columbia-salesforce/2023-chain-of-density/cod.md",
+      "title": "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting",
+      "authors": [
+        "Griffin Adams",
+        "Alexander Fabbri",
+        "Faisal Ladhak",
+        "Eric Lehman",
+        "Noémie Elhadad"
+      ],
+      "lab": "columbia-salesforce",
+      "year": 2023,
+      "venue": "New Frontiers in Summarization Workshop (NewSum), 2023",
+      "canonical": "https://arxiv.org/abs/2309.04269",
+      "published": "https://aclanthology.org/2023.newsum-1.7/",
+      "pinned_version": "arXiv:2309.04269v1",
+      "pinned_date": "2023-09-08",
+      "source_license": "arXiv.org perpetual non-exclusive license 1.0",
+      "date_summarized": "2026-07-17",
+      "verified_against_source": "2026-07-17",
+      "tier_budget_words": 150,
+      "tags": ["summarization", "prompting", "chain-of-density", "evaluation", "gpt-4"]
+    }
+  ]
+}
