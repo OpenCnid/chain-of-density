@@ -1,4 +1,4 @@
-# densities
+# llm-research-notes
 
 *The research that made us want to build things, written down the way we'd want to be written down.*
 
@@ -36,7 +36,7 @@ It splits across two repos on purpose:
 
 - **this repo** is the *what*: faithful, version-pinned, cited notes. Neutral by
   rule — opinions live only in each note's *our take*, nowhere else.
-- **[inspired-by](https://github.com/OpenCnid/inspired-by)** is the *why*:
+- **[llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)** is the *why*:
   which of our repos and features exist because of which paper, with receipts.
   The influence claims are ours; the science stays theirs.
 

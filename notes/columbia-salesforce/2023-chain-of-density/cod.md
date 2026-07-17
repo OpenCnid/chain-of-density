@@ -119,8 +119,8 @@ setting, not a universal constant [§4–6].
 
 # Our take
 
-This is the paper this repo is named after, and it shaped the design end to
-end. Three of its findings became three of our rules. The preference for
+This is the paper our whole note format comes from, and it shaped this repo's
+design end to end. Three of its findings became three of our rules. The preference for
 mid-chain density (median step three, not five) is why we keep *every* tier
 instead of shipping only the densest — the best summary is provably not the
 most compressed one. The low inter-annotator agreement (κ = 0.112) reads to us
