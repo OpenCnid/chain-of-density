@@ -1,6 +1,6 @@
 ---
 name: density-chain
-description: Write an OpenCnid five-tier chain-of-density note for a research paper, or scaffold a complete new paper repo around one. Use whenever the user asks to add, summarize, note, recognize, or "make a repo for" a research paper (arXiv, ACL Anthology, a lab blog post — any published research), mentions a density chain, CoD note, tier note, paper note, or the OpenCnid paper-repo collection — even if they never name this skill. Also use when updating, re-verifying, or extending an existing OpenCnid paper repo.
+description: Write an OpenCnid five-tier chain-of-density note for a research paper, or scaffold a complete new paper repo around one. Use whenever the user asks to add, summarize, note, recognize, or "make a repo for" a research paper (arXiv, ACL Anthology, a lab blog post — any published research), mentions a density chain, CoD note, tier note, paper note, or the OpenCnid paper-repo collection — even if they never name this skill. Also use when updating, re-verifying, or extending existing OpenCnid paper repos, including batch runs across many paper repos at once.
 ---
 
 # density-chain
@@ -44,11 +44,16 @@ GitHub at
 
 ## The pipeline
 
-1. **Fetch and verify — never write from memory.** Pull the paper via its
-   ar5iv/arXiv HTML rendering and the arXiv abs page (for license, version
-   number, and date). Every number, every author affiliation, every claim gets
-   read from the source in this session, with a locator (§ section, Table N,
-   Figure N). A quantity you "remember" is a quantity you don't write.
+1. **Fetch and verify — never write from memory.** Get the paper in front of
+   you: download the PDF into the session scratchpad and read it there, and/or
+   pull the ar5iv/arXiv HTML rendering; check the arXiv abs page for license,
+   version number, and date. The downloaded PDF is session working material —
+   it lives in the scratchpad, gets read, and stays there; a repo only ever
+   receives the *note*, plus a one-command fetch so readers get their copy
+   straight from the source. Every number, every author affiliation, every
+   claim gets read from the source in this session, with a locator (§ section,
+   Table N, Figure N), and the provenance section records which rendering the
+   locators follow. A quantity you "remember" is a quantity you don't write.
 2. **Write the note as `density-chain.md`.** Follow METHOD.md's template
    exactly: pinned frontmatter, a declared tier word budget held constant,
    T1–T5, entity ledger with tier-introduced + locator per entity, a key
@@ -85,6 +90,32 @@ GitHub at
    [llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)
    in its entry-format frame. No receipt, no entry — admiration is free;
    entries are earned.
+
+## Batch mode: bringing existing paper repos up to standard
+
+When the user provides a set of repos to run this skill across, work them **one
+repo at a time to completion** — verify, write, audit, commit — rather than
+half-finishing several; a partially noted repo is worse than an unnoted one
+because it looks done.
+
+For each repo:
+
+1. **Find the paper.** Read the repo's README.md and locate the source link
+   (arXiv, ACL Anthology, DOI, lab blog). Pin the version it points at.
+2. **Run the pipeline above** — scratchpad download, locator verification,
+   `density-chain.md`, `index.json`.
+3. **Bring the README to house style while preserving the owner's writing.**
+   Restructure, don't delete: fold existing prose into the house sections
+   (giants, PDF one-liner, cite-the-humans, honest notes). The owner's voice
+   and any content they wrote survives the makeover.
+4. **Commit per repo** with a descriptive message; push when the user has
+   asked for the repos to be updated on GitHub.
+
+Pause and surface instead of guessing when: a README has no findable paper
+link (ask which paper the repo reads), or a repo already contains a committed
+paper PDF (report it and suggest replacing it with the one-command fetch
+section — removing someone's committed file is the owner's call, not the
+skill's).
 
 ## Non-negotiables
 
