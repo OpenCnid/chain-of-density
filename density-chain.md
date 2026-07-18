@@ -139,8 +139,8 @@ note-taking a spine.
 
 - Canonical source: https://arxiv.org/abs/2309.04269
 - Published version: https://aclanthology.org/2023.newsum-1.7/
-- Version read: arXiv:2309.04269v1 (submitted 2023-09-08; v1 is the latest as
-  of verification)
+- Version studied: arXiv:2309.04269v1 (submitted 2023-09-08; v1 is the latest
+  as of verification)
 - Released data: https://huggingface.co/datasets/griffin/chain_of_density
 - Verified against source: 2026-07-17, via the ar5iv rendering of v1; section,
   table, and figure numbering follows that rendering

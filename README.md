@@ -12,7 +12,7 @@
 
 </div>
 
-> **A notes repo, not a mirror.** This repo is our reading of one paper —
+> **A notes repo, not a mirror.** This repo is our study of one paper —
 > Adams et al., *From Sparse to Dense: GPT-4 Summarization with Chain of
 > Density Prompting* ([arXiv:2309.04269](https://arxiv.org/abs/2309.04269)) —
 > and, because that paper gave our note-taking its spine, it is also the
@@ -55,8 +55,8 @@ We're a new lab. The honest way to introduce yourself is to say who taught you �
 precisely, with page numbers. (It's also considerably cheaper than a marketing
 department.) OpenCnid Labs builds things because other people's research made
 us want to, and we write that recognition down **one repo per paper, each named
-after the paper it reads** — so the people actually searching for the research
-can find our reading of it. This repo is the first, and it doubles as the
+after the paper it studies** — so the people actually searching for the research
+can find our study of it. This repo is the first, and it doubles as the
 template:
 
 - **[density-chain.md](density-chain.md)** — the five-tier note on the Chain
@@ -100,9 +100,9 @@ Three rules that don't bend:
 1. **Own words, always.** At most one short attributed quote per note; never a
    figure, never a table, never a passage.
 2. **Exact numbers, located.** A quantity without a locator doesn't go in.
-3. **Pin the version.** Every note records the exact arXiv vN it read and the
-   date it was last checked. Papers move; a note is only ground truth relative
-   to a pin.
+3. **Pin the version.** Every note records the exact arXiv vN it studied and
+   the date it was last checked. Papers move; a note is only ground truth
+   relative to a pin.
 
 ## 🏔️ Standing on the shoulders of giants
 
@@ -188,6 +188,8 @@ density-chain.md                        the five-tier note on this repo's paper
 METHOD.md                               the house methodology (canonical copy)
 chain-of-density-synthesis-prompt.md    the full authoring framework
 index.json                              machine-readable pin + verification metadata
+AGENTS.md                               the agents' front door — consuming + maintaining notes
+prompts/                                reusable session prompts (batch runs, handoffs)
 .claude/skills/density-chain/           the baked-in skill — clone, then "add a note for <paper>"
 assets/                                 banner art (the dots are load-bearing)
 ```

@@ -48,7 +48,7 @@ for long sources, audit-rubric candidate selection — see
 - **Exact numbers, located.** Quantitative claims use the source's exact values with a
   locator. Never round, never estimate, never fill in a number from memory.
 - **Pin the version.** Record the arXiv version (vN) or publication date you actually
-  read. Papers get revised; a note is only ground truth relative to a pinned version.
+  studied. Papers get revised; a note is only ground truth relative to a pinned version.
 - **Commentary is quarantined.** Our appreciation and opinions live in *Our take*,
   clearly ours, never blended into the tiers.
 - **Verification date.** Record when the note was last checked against the source.
@@ -56,13 +56,14 @@ for long sources, audit-rubric candidate selection — see
 
 ## Layout
 
-Each paper gets its own repository, named after the paper it reads so the
+Each paper gets its own repository, named after the paper it studies so the
 research community can find it. Inside:
 
 ```
 density-chain.md    the five-tier note
 index.json          source pin + verification metadata
 README.md           what the paper is and what our note is, in one screen
+AGENTS.md           how AI agents consume and maintain the note
 ```
 
 The methodology itself — this file and the synthesis prompt — lives canonically
@@ -128,7 +129,7 @@ entity_ledger:
 # Provenance
 
 - Canonical source: {Link}
-- Version read: {Version_Identifier_And_Date}
+- Version studied: {Version_Identifier_And_Date}
 - Revisions or errata noticed since: {Notes_Or_None}
 ```
 

@@ -21,13 +21,13 @@ drive everything below, so keep them in mind rather than following steps blindly
   κ = 0.112). That is why we ship all five tiers and let the reader pick —
   never just T5.
 - **The collection is only ground truth because the source always wins.** Pin
-  the exact version read, record the verification date, and if note and paper
+  the exact version studied, record the verification date, and if note and paper
   ever disagree, fix the note. Authority runs paper → note → inspirations
   entry, one direction only.
 
-## Read the framework first
+## Study the framework first
 
-Read these two documents before writing anything; they are the canonical spec
+Study these two documents before writing anything; they are the canonical spec
 and this file is only the field guide:
 
 1. `METHOD.md` — the rules that don't bend, plus the document template
@@ -45,15 +45,16 @@ GitHub at
 ## The pipeline
 
 1. **Fetch and verify — never write from memory.** Get the paper in front of
-   you: download the PDF into the session scratchpad and read it there, and/or
-   pull the ar5iv/arXiv HTML rendering; check the arXiv abs page for license,
-   version number, and date. The downloaded PDF is session working material —
-   it lives in the scratchpad, gets read, and stays there; a repo only ever
-   receives the *note*, plus a one-command fetch so readers get their copy
-   straight from the source. Every number, every author affiliation, every
-   claim gets read from the source in this session, with a locator (§ section,
-   Table N, Figure N), and the provenance section records which rendering the
-   locators follow. A quantity you "remember" is a quantity you don't write.
+   you: download the PDF into the session scratchpad and study it there,
+   and/or pull the ar5iv/arXiv HTML rendering; check the arXiv abs page for
+   license, version number, and date. The downloaded PDF is session study
+   material — it lives in the scratchpad, gets studied, and stays there; a
+   repo only ever receives the *note*, plus a one-command fetch so readers get
+   their copy straight from the source. Every number, every author
+   affiliation, every claim gets studied at the source in this session, with a
+   locator (§ section, Table N, Figure N), and the provenance section records
+   which rendering the locators follow. A quantity you "remember" is a
+   quantity you don't write.
 2. **Write the note as `density-chain.md`.** Follow METHOD.md's template
    exactly: pinned frontmatter, a declared tier word budget held constant,
    T1–T5, entity ledger with tier-introduced + locator per entity, a key
@@ -65,12 +66,15 @@ GitHub at
 4. **New paper? New repo, named after the paper.** Kebab-case the name the
    research community actually uses (`chain-of-density`,
    `lost-in-the-middle`) — discoverability is the point; someone searching for
-   the paper should find our reading of it. Scaffold: `density-chain.md`,
-   `index.json`, `README.md`, `LICENSE.md` (CC BY 4.0 for prose), and a
-   *link* to chain-of-density for METHOD.md and the synthesis prompt — never a
-   copy (one canonical home, no drift).
-5. **README in house style.** Use the chain-of-density repo's README as the
-   living template. The required furniture: a theme-neutral animated SVG banner
+   the paper should find our study of it. Scaffold: `density-chain.md`,
+   `index.json`, `README.md`, `AGENTS.md` (how agents consume and maintain the
+   note — mirror the canonical one in chain-of-density), `LICENSE.md` (CC BY
+   4.0 for prose), and a *link* to chain-of-density for METHOD.md and the
+   synthesis prompt — never a copy (one canonical home, no drift).
+5. **README in house style.** Load the `prompt-engineering` and
+   `hypershot-protocol` skills first — README furniture and templates prime
+   future generation, and they should be authored under those protocols. Use
+   the chain-of-density repo's README as the living template. The required furniture: a theme-neutral animated SVG banner
    (mid-tone palette #58a6ff→#9b8cf7→#ef6fd0, mono type), shields badges
    including joke badges that state real guarantees, the one-way-rule alert, a
    "standing on the shoulders of giants" section naming the authors with
@@ -103,7 +107,7 @@ For each repo:
 1. **Find the paper.** Read the repo's README.md and locate the source link
    (arXiv, ACL Anthology, DOI, lab blog). Pin the version it points at.
 2. **Run the pipeline above** — scratchpad download, locator verification,
-   `density-chain.md`, `index.json`.
+   `density-chain.md`, `index.json`, `AGENTS.md` if the repo lacks one.
 3. **Bring the README to house style while preserving the owner's writing.**
    Restructure, don't delete: fold existing prose into the house sections
    (giants, PDF one-liner, cite-the-humans, honest notes). The owner's voice
@@ -112,7 +116,7 @@ For each repo:
    asked for the repos to be updated on GitHub.
 
 Pause and surface instead of guessing when: a README has no findable paper
-link (ask which paper the repo reads), or a repo already contains a committed
+link (ask which paper the repo studies), or a repo already contains a committed
 paper PDF (report it and suggest replacing it with the one-command fetch
 section — removing someone's committed file is the owner's call, not the
 skill's).
