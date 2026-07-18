@@ -1,42 +1,56 @@
-# chain-of-density
+<div align="center">
+
+<img src="assets/banner.svg" width="100%" alt="chain-of-density: five same-sized boxes, T1 sparse through T5 dense, each holding more dots than the last — same length, more inside">
 
 *The research that made us want to build things, written down the way we'd want to be written down.*
+
+[![arXiv](https://img.shields.io/badge/arXiv-2309.04269-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2309.04269)
+[![license](https://img.shields.io/badge/license-CC_BY_4.0-3b7ddd)](LICENSE.md)
+![papers hosted](https://img.shields.io/badge/papers_hosted-0_(on_purpose)-2ea44f)
+![numbers from memory](https://img.shields.io/badge/numbers_from_memory-0-2ea44f)
+![tiers](https://img.shields.io/badge/tiers_shipped-all_five-a371f7)
+
+</div>
 
 > **A notes repo, not a mirror.** This repo is our reading of one paper —
 > Adams et al., *From Sparse to Dense: GPT-4 Summarization with Chain of
 > Density Prompting* ([arXiv:2309.04269](https://arxiv.org/abs/2309.04269)) —
 > and, because that paper gave our note-taking its spine, it is also the
-> canonical home of the methodology every OpenCnid paper repo follows. No
-> papers are hosted here and none ever will be. [The note](cod.md) is an
-> original synthesis — our words, their findings, a citation at every level of
-> the chain. The original stays canonical: when the note and its source
-> disagree, the source wins and the note gets fixed. That one-way rule is what
-> lets us call these notes ground truth with a straight face.
+> canonical home of the methodology every OpenCnid paper repo follows. (Yes,
+> we summarized the summarization paper with its own method. It felt rude not
+> to.) No papers are hosted here and none ever will be. [The note](cod.md) is
+> an original synthesis — our words, their findings, a citation at every level
+> of the chain.
+
+> [!IMPORTANT]
+> **The one-way rule.** When a note and its paper disagree, the paper wins and
+> the note gets fixed. No exceptions, no negotiation, no "but we liked our
+> version better." That rule is the entire reason we can call these notes
+> ground truth with a straight face.
 
 **Every note is a chain, and the chain is the artifact.** A note starts sparse
 and gets rewritten four times at fixed length, fusing in a few more salient
 facts per round — methods, datasets, exact numbers, ablations, limitations —
 and no fact enters the chain without a locator pointing back into the paper
 (§ section, Table N, Figure N). We keep *all five tiers*, not just the densest:
-T1 is the 30-second version, T5 is the one you take into a design review, and
-every tier cites its way home.
 
 | tier | what it is |
 |---|---|
-| **T1 — sparse** | the problem, the approach, the headline result. Self-contained |
-| **T2–T4** | same length each, folding in 2–3 more salient entities per round, every one with a locator |
-| **T5 — dense** | maximally fused, still readable, every claim traceable |
+| **T1 — sparse** | the problem, the approach, the headline result. For readers whose coffee hasn't kicked in yet |
+| **T2–T4** | same length each, folding in 2–3 more salient entities per round, every one with a locator. The plot thickens; the word count doesn't |
+| **T5 — dense** | maximally fused, still readable, every claim traceable. The one you bring to a design review |
 | **key results** | exact values from the source, never rounded, each with its table or figure |
-| **our take** | the only opinionated section, clearly ours, quarantined from the facts |
+| **our take** | the only opinionated section, clearly ours, quarantined like it's contagious (opinions are) |
 
 ## Why this exists
 
 We're a new lab. The honest way to introduce yourself is to say who taught you —
-precisely, with page numbers. OpenCnid Labs builds things because other
-people's research made us want to, and we write that recognition down **one
-repo per paper, each named after the paper it reads** — so the people actually
-searching for the research can find our reading of it. This repo is the first,
-and it doubles as the template:
+precisely, with page numbers. (It's also considerably cheaper than a marketing
+department.) OpenCnid Labs builds things because other people's research made
+us want to, and we write that recognition down **one repo per paper, each named
+after the paper it reads** — so the people actually searching for the research
+can find our reading of it. This repo is the first, and it doubles as the
+template:
 
 - **[cod.md](cod.md)** — the five-tier note on the Chain of Density paper.
 - **[METHOD.md](METHOD.md)** and
@@ -46,9 +60,17 @@ and it doubles as the template:
   the map across all our paper repos: which of our work each paper shaped, and
   why, with receipts.
 
-Authority runs one direction: **paper → note → list entry.** Never backwards. A
-list entry can't cite itself into being true; it points at a note, and the note
-points into the paper.
+Authority runs one direction, and only one:
+
+```mermaid
+flowchart LR
+    paper["📄 the paper<br/><i>canonical</i>"] --> note["🔗 our note<br/><i>working ground truth</i>"]
+    note --> entry["🧾 inspirations entry<br/><i>interpretation</i>"]
+    entry -. never .-> paper
+```
+
+A list entry can't cite itself into being true; it points at a note, and the
+note points into the paper.
 
 ## How a note gets written
 
@@ -57,9 +79,10 @@ points into the paper.
 the full authoring framework. The pipeline in one breath: extract evidence
 first — atomic claims, each with a locator and its qualifiers intact — *then*
 densify, and pick the final tier by audit rubric (entailment, attribution,
-qualifier integrity, readability), never "densest wins." Long papers go through
-a map/reduce pass so a result buried mid-paper doesn't get lost to the middle
-of anyone's context window.
+qualifier integrity, readability), never "densest wins." (T5 has feelings
+about this. T5 will cope.) Long papers go through a map/reduce pass so a
+result buried mid-paper doesn't get lost to the middle of anyone's context
+window.
 
 Three rules that don't bend:
 
@@ -91,6 +114,9 @@ the note gets flagged before we get embarrassed.
 - **We will get things wrong.** When we do, the fix lands source-first and the
   correction is public history. If we've mangled your paper, open an issue —
   correcting the record *is* the project.
+- **A human and an AI wrote this repo together.** The human kept asking for
+  more jokes; the AI kept adding citations. We disclose this because
+  disclosure is sort of our whole thing.
 
 ## Layout
 
@@ -99,6 +125,7 @@ cod.md                                  the five-tier note on this repo's paper
 METHOD.md                               the house methodology (canonical copy)
 chain-of-density-synthesis-prompt.md    the full authoring framework
 index.json                              machine-readable pin + verification metadata
+assets/                                 banner art (the dots are load-bearing)
 ```
 
 Every future paper repo follows the same shape, minus the methodology files —
@@ -115,9 +142,9 @@ those live here and get linked, not copied.
 - **Coverage:** the opening slate is Anthropic-heavy on purpose — their papers
   are a large part of why we're here — then outward to the rest of the field.
 
-## References
-
-The methodology itself stands on published work:
+<details>
+<summary><b>References</b> — the methodology stands on published work (nine papers deep; click to expand)</summary>
+<br>
 
 - **The method:** Adams et al., *From Sparse to Dense: GPT-4 Summarization with
   Chain of Density Prompting*
@@ -140,7 +167,15 @@ The methodology itself stands on published work:
 - **Redundancy control:** Xiao & Carenini
   ([2012.00052](https://arxiv.org/abs/2012.00052))
 
+</details>
+
 ## License
 
 Notes and prose: [CC BY 4.0](LICENSE.md) © OpenCnid Labs. The papers we
 summarize belong to their authors — that's the point.
+
+---
+
+<div align="center">
+<sub>No papers were harmed, stored, or even lightly cached in the making of this repository.</sub>
+</div>
