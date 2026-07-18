@@ -1,15 +1,17 @@
-# llm-research-notes
+# chain-of-density
 
 *The research that made us want to build things, written down the way we'd want to be written down.*
 
-> **A notes repo, not a mirror.** No papers are hosted here and none ever will
-> be. Every document is an original synthesis — our words, their findings, a
-> citation at every level of the chain — built with Chain-of-Density
-> summarization (a method with its own paper, which naturally
-> [gets its own note](notes/columbia-salesforce/2023-chain-of-density/cod.md)).
-> The originals stay canonical: when a note and its source disagree, the source
-> wins and the note gets fixed. That one-way rule is what lets us call this
-> collection ground truth with a straight face.
+> **A notes repo, not a mirror.** This repo is our reading of one paper —
+> Adams et al., *From Sparse to Dense: GPT-4 Summarization with Chain of
+> Density Prompting* ([arXiv:2309.04269](https://arxiv.org/abs/2309.04269)) —
+> and, because that paper gave our note-taking its spine, it is also the
+> canonical home of the methodology every OpenCnid paper repo follows. No
+> papers are hosted here and none ever will be. [The note](cod.md) is an
+> original synthesis — our words, their findings, a citation at every level of
+> the chain. The original stays canonical: when the note and its source
+> disagree, the source wins and the note gets fixed. That one-way rule is what
+> lets us call these notes ground truth with a straight face.
 
 **Every note is a chain, and the chain is the artifact.** A note starts sparse
 and gets rewritten four times at fixed length, fusing in a few more salient
@@ -30,15 +32,19 @@ every tier cites its way home.
 ## Why this exists
 
 We're a new lab. The honest way to introduce yourself is to say who taught you —
-precisely, with page numbers. OpenCnid Labs builds things because other people's
-research made us want to, and this repo is where that recognition gets specific.
-It splits across two repos on purpose:
+precisely, with page numbers. OpenCnid Labs builds things because other
+people's research made us want to, and we write that recognition down **one
+repo per paper, each named after the paper it reads** — so the people actually
+searching for the research can find our reading of it. This repo is the first,
+and it doubles as the template:
 
-- **this repo** is the *what*: faithful, version-pinned, cited notes. Neutral by
-  rule — opinions live only in each note's *our take*, nowhere else.
-- **[llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)** is the *why*:
-  which of our repos and features exist because of which paper, with receipts.
-  The influence claims are ours; the science stays theirs.
+- **[cod.md](cod.md)** — the five-tier note on the Chain of Density paper.
+- **[METHOD.md](METHOD.md)** and
+  **[the synthesis prompt](chain-of-density-synthesis-prompt.md)** — the house
+  methodology, canonical here because this is the paper it came from.
+- **[llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)** —
+  the map across all our paper repos: which of our work each paper shaped, and
+  why, with receipts.
 
 Authority runs one direction: **paper → note → list entry.** Never backwards. A
 list entry can't cite itself into being true; it points at a note, and the note
@@ -66,10 +72,10 @@ Three rules that don't bend:
 
 ## Kept honest by machine
 
-`index.json` is the machine-readable face of the collection: every note, its
-source pin, its verification date, its tags. **Trellis**, our current project,
-consumes that index and owns freshness — when a source revs (v2, errata,
-retraction), the note gets flagged before we get embarrassed.
+`index.json` is the machine-readable face of every paper repo: the source pin,
+the verification date, the tags. **Trellis**, our current project, consumes
+those indexes and owns freshness — when a source revs (v2, errata, retraction),
+the note gets flagged before we get embarrassed.
 
 ## Honest notes
 
@@ -89,20 +95,21 @@ retraction), the note gets flagged before we get embarrassed.
 ## Layout
 
 ```
-notes/
-  <lab>/
-    <year>-<paper-slug>/
-      cod.md
-index.json
-METHOD.md
-chain-of-density-synthesis-prompt.md
+cod.md                                  the five-tier note on this repo's paper
+METHOD.md                               the house methodology (canonical copy)
+chain-of-density-synthesis-prompt.md    the full authoring framework
+index.json                              machine-readable pin + verification metadata
 ```
+
+Every future paper repo follows the same shape, minus the methodology files —
+those live here and get linked, not copied.
 
 ## What's next
 
-- **A `new-note` skill** for Claude Code: say *"add a note for <paper>"* and it
-  scaffolds the chain in house style — frontmatter pinned, tiers stubbed, audit
-  checklist attached.
+- **A `new-paper-repo` skill** for Claude Code: say *"add a repo for <paper>"*
+  and it scaffolds the whole thing in house style — repo named after the paper
+  for discoverability, frontmatter pinned, tiers stubbed, audit checklist
+  attached.
 - **The staleness bot:** Trellis opening an issue the day an arXiv v(N+1) lands
   on anything we've pinned.
 - **Coverage:** the opening slate is Anthropic-heavy on purpose — their papers

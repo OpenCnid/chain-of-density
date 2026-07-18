@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
   "updated": "2026-07-17",
+  "repo": "https://github.com/OpenCnid/chain-of-density",
   "notes": [
     {
       "id": "2023-chain-of-density",
-      "path": "notes/columbia-salesforce/2023-chain-of-density/cod.md",
+      "path": "cod.md",
       "title": "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting",
       "authors": [
         "Griffin Adams",
