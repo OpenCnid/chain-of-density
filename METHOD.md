@@ -60,18 +60,22 @@ Each paper gets its own repository, named after the paper it reads so the
 research community can find it. Inside:
 
 ```
-cod.md          the five-tier note
-index.json      source pin + verification metadata
-README.md       what the paper is and what our note is, in one screen
+density-chain.md    the five-tier note
+index.json          source pin + verification metadata
+README.md           what the paper is and what our note is, in one screen
 ```
 
 The methodology itself — this file and the synthesis prompt — lives canonically
 in [chain-of-density](https://github.com/OpenCnid/chain-of-density) and is
 linked from other paper repos, not copied into them.
 
+This methodology is also packaged as a runnable Claude Code skill —
+`.claude/skills/density-chain/` in this repo — so a paper repo can be produced
+end to end by saying *"add a note for \<paper\>"*.
+
 ## Document template
 
-Each `cod.md` follows this frame. Bracketed names are generation instructions, not
+Each `density-chain.md` follows this frame. Bracketed names are generation instructions, not
 literal text; `...` slots repeat the pattern established around them.
 
 ```markdown

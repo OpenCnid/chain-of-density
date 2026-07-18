@@ -5,7 +5,7 @@
   "notes": [
     {
       "id": "2023-chain-of-density",
-      "path": "cod.md",
+      "path": "density-chain.md",
       "title": "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting",
       "authors": [
         "Griffin Adams",

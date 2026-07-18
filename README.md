@@ -18,9 +18,9 @@
 > and, because that paper gave our note-taking its spine, it is also the
 > canonical home of the methodology every OpenCnid paper repo follows. (Yes,
 > we summarized the summarization paper with its own method. It felt rude not
-> to.) No papers are hosted here and none ever will be. [The note](cod.md) is
-> an original synthesis — our words, their findings, a citation at every level
-> of the chain.
+> to.) No papers are hosted here and none ever will be.
+> [The note](density-chain.md) is an original synthesis — our words, their
+> findings, a citation at every level of the chain.
 
 > [!IMPORTANT]
 > **The one-way rule.** When a note and its paper disagree, the paper wins and
@@ -42,6 +42,13 @@ and no fact enters the chain without a locator pointing back into the paper
 | **key results** | exact values from the source, never rounded, each with its table or figure |
 | **our take** | the only opinionated section, clearly ours, quarantined like it's contagious (opinions are) |
 
+> 🛠️ **Cloned this and using Claude Code?** There's a
+> [`density-chain` skill](.claude/skills/density-chain/SKILL.md) baked in:
+> say *"add a note for \<paper\>"* and it runs the whole pipeline in house
+> style — fetch, verify with locators, five tiers at a held budget, pinned
+> provenance, zero numbers from memory. You have officially run out of
+> excuses.
+
 ## Why this exists
 
 We're a new lab. The honest way to introduce yourself is to say who taught you —
@@ -52,10 +59,14 @@ after the paper it reads** — so the people actually searching for the research
 can find our reading of it. This repo is the first, and it doubles as the
 template:
 
-- **[cod.md](cod.md)** — the five-tier note on the Chain of Density paper.
+- **[density-chain.md](density-chain.md)** — the five-tier note on the Chain
+  of Density paper.
 - **[METHOD.md](METHOD.md)** and
   **[the synthesis prompt](chain-of-density-synthesis-prompt.md)** — the house
   methodology, canonical here because this is the paper it came from.
+- **[the `density-chain` skill](.claude/skills/density-chain/SKILL.md)** — the
+  methodology as a runnable Claude Code skill, so every future paper repo
+  comes out of the same oven.
 - **[llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)** —
   the map across all our paper repos: which of our work each paper shaped, and
   why, with receipts.
@@ -93,6 +104,58 @@ Three rules that don't bend:
    date it was last checked. Papers move; a note is only ground truth relative
    to a pin.
 
+## 🏔️ Standing on the shoulders of giants
+
+The actual science in this story was done by **Griffin Adams** (Columbia),
+**Alex Fabbri** (Salesforce AI), **Faisal Ladhak** (Columbia), **Eric Lehman**
+(MIT), and **Noémie Elhadad** (Columbia) — they designed the prompt, ran the
+study, and personally read five hundred summaries so the rest of us could know
+which tier humans actually like. We wrote a note about it. Those are very
+different jobs, and only one of them deserves your citation.
+
+Do not cite "some repo on GitHub." Cite them — BibTeX below.
+
+## 📥 Want the PDF? One command, straight from the source
+
+We don't keep a copy here (see: entire ethos, above). arXiv hosts it
+beautifully, for free, forever — no middlemen, no photocopier smell:
+
+```bash
+curl -L -o chain-of-density.pdf https://arxiv.org/pdf/2309.04269v1
+```
+
+Prefer the version of record? The [ACL Anthology
+page](https://aclanthology.org/2023.newsum-1.7/) has it, DOI and all.
+
+## 📚 Cite the humans, not us
+
+This repo is not a citable source; it's a signpost pointing at one. If you take
+one thing away, take this:
+
+```bibtex
+@inproceedings{adams-etal-2023-sparse,
+    title = "From Sparse to Dense: {GPT}-4 Summarization with Chain of Density Prompting",
+    author = "Adams, Griffin  and
+      Fabbri, Alex  and
+      Ladhak, Faisal  and
+      Lehman, Eric  and
+      Elhadad, No{\'e}mie",
+    editor = "Dong, Yue  and
+      Xiao, Wen  and
+      Wang, Lu  and
+      Liu, Fei  and
+      Carenini, Giuseppe",
+    booktitle = "Proceedings of the 4th New Frontiers in Summarization Workshop",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.newsum-1.7/",
+    doi = "10.18653/v1/2023.newsum-1.7",
+    pages = "68--74"
+}
+```
+
 ## Kept honest by machine
 
 `index.json` is the machine-readable face of every paper repo: the source pin,
@@ -121,10 +184,11 @@ the note gets flagged before we get embarrassed.
 ## Layout
 
 ```
-cod.md                                  the five-tier note on this repo's paper
+density-chain.md                        the five-tier note on this repo's paper
 METHOD.md                               the house methodology (canonical copy)
 chain-of-density-synthesis-prompt.md    the full authoring framework
 index.json                              machine-readable pin + verification metadata
+.claude/skills/density-chain/           the baked-in skill — clone, then "add a note for <paper>"
 assets/                                 banner art (the dots are load-bearing)
 ```
 
@@ -133,10 +197,9 @@ those live here and get linked, not copied.
 
 ## What's next
 
-- **A `new-paper-repo` skill** for Claude Code: say *"add a repo for <paper>"*
-  and it scaffolds the whole thing in house style — repo named after the paper
-  for discoverability, frontmatter pinned, tiers stubbed, audit checklist
-  attached.
+- **More paper repos.** The `density-chain` skill shipped (see the toolbox
+  note above), which drops the marginal cost of recognizing a paper to
+  roughly one sentence.
 - **The staleness bot:** Trellis opening an issue the day an arXiv v(N+1) lands
   on anything we've pinned.
 - **Coverage:** the opening slate is Anthropic-heavy on purpose — their papers
