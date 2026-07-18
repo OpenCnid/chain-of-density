@@ -44,17 +44,24 @@ GitHub at
 
 ## The pipeline
 
-1. **Fetch and verify — never write from memory.** Get the paper in front of
-   you: download the PDF into the session scratchpad and study it there,
-   and/or pull the ar5iv/arXiv HTML rendering; check the arXiv abs page for
-   license, version number, and date. The downloaded PDF is session study
-   material — it lives in the scratchpad, gets studied, and stays there; a
-   repo only ever receives the *note*, plus a one-command fetch so readers get
-   their copy straight from the source. Every number, every author
-   affiliation, every claim gets studied at the source in this session, with a
-   locator (§ section, Table N, Figure N), and the provenance section records
-   which rendering the locators follow. A quantity you "remember" is a
-   quantity you don't write.
+1. **Fetch and verify — never write from memory.** Research arrives in two
+   shapes; the pipeline handles both:
+   - **Papers** (arXiv, ACL Anthology, DOI journals): download the PDF into
+     the session scratchpad and study it there, and/or pull the ar5iv/arXiv
+     HTML rendering; check the abs page for license, version number, and
+     date. Pin the exact version (vN). Locators: § section, Table N, Figure N.
+   - **Lab articles** (Anthropic research pages and Transformer Circuits,
+     OpenAI research/blog, DeepMind, and other labs' posts): study the
+     article at its canonical URL. Articles have no vN, so the pin is the
+     publication date plus the URL, with the access date recorded. Locators:
+     section headings and figure names — articles have no page numbers.
+   Either way, downloads are session study material — scratchpad only. A repo
+   receives the *note* plus a one-command fetch (curl the arXiv PDF; for
+   articles with no PDF, link the canonical URL — same principle, the source
+   serves its own copy). Every number, author affiliation, and claim gets
+   studied at the source in this session with a locator, and provenance
+   records which rendering the locators follow. A quantity you "remember" is
+   a quantity you don't write.
 2. **Write the note as `density-chain.md`.** Follow METHOD.md's template
    exactly: pinned frontmatter, a declared tier word budget held constant,
    T1–T5, entity ledger with tier-introduced + locator per entity, a key
@@ -63,10 +70,13 @@ GitHub at
 3. **Index it.** Add or update `index.json` (schema: see the chain-of-density
    repo's copy). Trellis consumes these; a note without an index entry is
    invisible to the staleness machinery.
-4. **New paper? New repo, named after the paper.** Kebab-case the name the
-   research community actually uses (`chain-of-density`,
-   `lost-in-the-middle`) — discoverability is the point; someone searching for
-   the paper should find our study of it. Scaffold: `density-chain.md`,
+4. **New paper? New repo, named after the paper's most searchable handle.**
+   Kebab-case the method name, acronym, or title hook the community actually
+   uses (`chain-of-density`, `lost-in-the-middle`, `pcf-adaptive-agents`). Be
+   creative when the full title is unwieldy — an acronym plus a domain
+   keyword often beats a truncated title — because full discoverability is
+   recovered through the description and topics (step 6): the name catches
+   the eye, the metadata catches the search. Scaffold: `density-chain.md`,
    `index.json`, `README.md`, `AGENTS.md` (how agents consume and maintain the
    note — mirror the canonical one in chain-of-density), `LICENSE.md` (CC BY
    4.0 for prose), and a *link* to chain-of-density for METHOD.md and the
@@ -80,15 +90,26 @@ GitHub at
    "standing on the shoulders of giants" section naming the authors with
    affiliations *as printed on the paper*, a "want the PDF? one command,
    straight from the source" section (curl from arXiv — we never host papers),
-   a "cite the humans, not us" section carrying the official BibTeX (fetch it
-   from the ACL Anthology `.bib` endpoint or arXiv — never hand-roll a
-   citation), honest notes including the human+AI co-authorship disclosure,
+   a "cite the humans, not us" section carrying the official BibTeX — fetch
+   it from the ACL Anthology `.bib` endpoint, arXiv's `/bibtex/<id>` export,
+   or the article's own "cite this" block; when a lab article offers none,
+   build an `@misc` entry from metadata verified on the page (title, authors,
+   publisher, URL, dates) — verified fields, never memory — honest notes
+   including the human+AI co-authorship disclosure,
    references, and a footer joke. Voice: high-level, fun, educational; wry
    parentheticals, no marketing.
-6. **Humor placement.** READMEs and *our take* only. The tiers, the key
+6. **Make it findable: description and topics.** The repo description
+   carries the search terms the name can't — full paper title, first author,
+   year, and the arXiv ID or source lab. Then add topics with
+   `gh repo edit --add-topic`: the method name and acronym, three to six
+   domain keywords, the source tag (`arxiv`, or the lab's name for articles),
+   plus the house tags `research-notes` and `chain-of-density`. Topics are
+   GitHub's search index — this is where the SEO lives, which is what frees
+   the repo name to be memorable.
+7. **Humor placement.** READMEs and *our take* only. The tiers, the key
    results, and the provenance stay bone-dry — they are the ground truth, and
    jokes in ground truth age like milk.
-7. **Inspirations entry — only with a receipt.** If the paper demonstrably
+8. **Inspirations entry — only with a receipt.** If the paper demonstrably
    shaped OpenCnid work (a commit, design doc, or shipped feature you can
    link), add an entry to
    [llm-research-inspirations](https://github.com/OpenCnid/llm-research-inspirations)
