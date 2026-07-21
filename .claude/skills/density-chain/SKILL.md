@@ -1,6 +1,6 @@
 ---
 name: density-chain
-description: Write an OpenCnid five-tier chain-of-density note for a research paper, or scaffold a complete new paper repo around one. Use whenever the user asks to add, summarize, note, recognize, or "make a repo for" a research paper (arXiv, ACL Anthology, a lab blog post — any published research), mentions a density chain, CoD note, tier note, paper note, or the OpenCnid paper-repo collection — even if they never name this skill. Also use when updating, re-verifying, or extending existing OpenCnid paper repos, including batch runs across many paper repos at once.
+description: Write an OpenCnid five-tier chain-of-density note for a research paper, or scaffold a complete new paper repo around one. Use whenever the user asks to add, summarize, note, recognize, or "make a repo for" a research paper (arXiv, ACL Anthology, a lab blog post — any published research), mentions a density chain, CoD note, tier note, paper note, or the OpenCnid paper-repo collection — even if they never name this skill. Also use when updating, re-verifying, or extending existing OpenCnid paper repos, including batch runs across many paper repos at once. Also runs in SYSTEM MODE — a chain-of-density map of a whole codebase or system rather than a paper: a branching "density-trellis" reverse-engineered from the project's commit history, written to docs/density-chain/DENSITY-CHAIN.md with an interactive HTML+SVG render. Use system mode when the user asks to map, summarize at increasing density, or make a density-chain / density-trellis of a project, engine, codebase, or its features and roadmap.
 ---
 
 # density-chain
@@ -141,6 +141,62 @@ link (ask which paper the repo studies), or a repo already contains a committed
 paper PDF (report it and suggest replacing it with the one-command fetch
 section — removing someone's committed file is the owner's call, not the
 skill's).
+
+## System mode: an in-repo density-trellis of a whole codebase
+
+The subject is sometimes not a paper but a **whole system** — a codebase, an
+engine, a project's features and roadmap. Same method, different shape and home.
+
+**Shape — a trellis, not a spine.** A paper note is one spine (T1–T5). A system
+is a **branching lattice**: a shared *trunk* (the whole system summarized at
+increasing density — T0 sentence, T1 paragraph, T2 class map) plus one *branch
+per subsystem class*. Each branch is its own fixed-length five-tier chain of
+density whose densification traverses time by salience:
+
+    T1 {General_Essence} · T2–T3 {Current_Shipped_Machinery} · T4–T5 {Frontier_And_Future_Plans}
+
+Seed the classes from what the user names; branch out and add classes as
+coverage demands. Compose the trunk, a general→current→future cross-section
+table, and a cross-link lattice yourself, after the branches exist.
+
+**Source of truth is the repo — reverse-engineer it, never write from memory.**
+The commit log *is* the paper: `git log` reconstructs the true build order;
+design records and source are the locators. This is the system-mode form of "the
+source always wins." Status labels are load-bearing and must be *verified*, not
+assumed: `shipped-pinned` (committed code + a passing drill) ≠ `adopted /
+ratified-as-principle (no build)` ≠ `proposed / recorded-research`. A capability
+you cannot locate in the repo is one you do not write.
+
+**Scale by fan-out (optional).** For a large system, spawn one read-only
+sub-agent per class against a shared, *verbatim* ground block and a rigid return
+frame (five tiers + entity ledger with locators + commit receipts + cross-links +
+an explicit "uncovered" slot); compose the cross-cutting trunk and lattice
+yourself, since siblings cannot see each other. Author every sub-agent prompt
+under the `prompt-engineering`, `hypershot-protocol`, and `subagent-composition`
+skills (Guardrail 15).
+
+**Output — a file pair in `docs/density-chain/`:**
+
+1. `docs/density-chain/DENSITY-CHAIN.md` — the trellis in markdown (**ground
+   truth**): a dated status header (PROPOSED, subordinate to code > glossary >
+   prose), the trunk, the branches (each: charter, T1–T5, a compact status
+   ledger, cross-links), the temporal cross-section, the cross-link lattice, and
+   a provenance/method section with an honest ledger of what could not be
+   verified.
+2. `docs/density-chain/DENSITY-CHAIN.html` — a self-contained, theme-aware
+   interactive render (**the map**), carrying the same banner furniture as a
+   paper README: a **theme-neutral animated SVG banner** (mid-tone palette
+   #58a6ff→#9b8cf7→#ef6fd0, mono type), the five-tier **density ramp** as its
+   colour gradient, and click-to-expand tiers. Keep it in sync with the markdown;
+   the markdown wins on disagreement. Author its furniture under
+   `prompt-engineering` + `hypershot-protocol`, as with any README.
+3. `docs/density-chain/README.md` — a one-screen explainer of the folder and its
+   conventions, if the folder does not already have one.
+
+The folder is the scalable home: one `<NAME>.md` / `<NAME>.html` pair per system,
+the whole engine being `DENSITY-CHAIN`. Everything in "Why the rules are shaped
+this way" and "Non-negotiables" still binds — fixed length per tier, ship all
+five, own words, exact locators, and the source (here the repo) always wins.
 
 ## Non-negotiables
 
